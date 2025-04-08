@@ -1,0 +1,98 @@
+@tailwind  base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --primary: rgb(99, 102, 241);
+  --primary-dark: rgb(79, 70, 229);
+}
+
+body {
+  @apply bg-gray-900 text-white;
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+}
+
+.splash-bg {
+  background: linear-gradient(135deg, #1e1e2f 0%, #2d1b4e 100%);
+}
+
+@keyframes pulse {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0.7; }
+}
+
+.animate-pulse-slow {
+  animation: pulse 3s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+}
+
+@keyframes floating {
+  0% { transform: translateY(0px); }
+  50% { transform: translateY(-10px); }
+  100% { transform: translateY(0px); }
+}
+
+.animate-float {
+  animation: floating 3s ease-in-out infinite;
+}
+
+.bottom-tab {
+  @apply flex flex-col items-center justify-center pt-2 pb-1 text-xs font-medium transition-colors;
+}
+
+.bottom-tab.active {
+  @apply text-indigo-500;
+}
+
+.bottom-tab:not(.active) {
+  @apply text-gray-400 hover:text-gray-200;
+}
+
+/* Form styles */
+.input-field {
+  @apply w-full bg-gray-800 rounded-lg border border-gray-700 px-4 py-3 text-gray-200 focus:outline-none focus:ring-2 focus:ring-indigo-500 transition-all;
+}
+
+.btn-primary {
+  @apply w-full bg-indigo-600 hover:bg-indigo-700 text-white font-medium py-3 px-4 rounded-lg transition-colors focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500 disabled:opacity-70 disabled:cursor-not-allowed;
+}
+
+.btn-secondary {
+  @apply w-full bg-gray-700 hover:bg-gray-600 text-white font-medium py-3 px-4 rounded-lg transition-colors focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-gray-500 disabled:opacity-70 disabled:cursor-not-allowed;
+}
+
+/* Music player */
+.audio-visualizer {
+  @apply flex items-end h-20 gap-0.5;
+}
+
+.visualizer-bar {
+  @apply bg-indigo-500 w-1 rounded-t-sm;
+}
+
+/* Slider */
+.custom-range {
+  @apply w-full h-2 bg-gray-700 rounded-lg appearance-none cursor-pointer;
+}
+
+.custom-range::-webkit-slider-thumb {
+  @apply appearance-none w-4 h-4 rounded-full bg-indigo-500;
+}
+
+/* Scrollbar styling */
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+
+::-webkit-scrollbar-track {
+  @apply bg-gray-800;
+}
+
+::-webkit-scrollbar-thumb {
+  @apply bg-gray-600 rounded-full;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  @apply bg-gray-500;
+}
+ 
